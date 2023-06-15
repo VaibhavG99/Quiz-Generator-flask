@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+ QUIZO | Take Quiz
+{% endblock %}
+
+{% block body %}
+
+<h1>Enter the questions in your quiz </h1>
+<div>
+    <form name = 'input' action="/create/submit" method = "post">
+        
+
+    <div id="output">
+    {% for i in range(n) %}
+      <h1>Question no. {{ i+1 }} <input type="text" name="ques"></h1>
+      {% for i in range(4) %}
+      <h4>option no. {{ i+1 }} <input type="text" name="opt"></h4>
+      
+    {% endfor %}
+    <h4>corrected option no. <input type="number" ></h4>
+      
+    {% endfor %}
+        
+
+    </div>
+
+    <h1> Click here to create the quiz :<input type="submit" value="Create Quiz" placeholder="Medium"></h1>
+
+    </form>
+</div>
+
+<style>
+    h1{
+        padding-left: 20px;
+    }
+    h4{
+        padding-left: 200px;
+    }
+    input{
+        padding: 10px;
+        padding-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+  width: 600px;
+    }
+</style>
+
+{% endblock %}
